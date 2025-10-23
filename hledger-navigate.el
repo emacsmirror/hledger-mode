@@ -124,7 +124,7 @@ subtract when `days 'is negative)."
            (new-date (encode-time (decoded-time-add parsed (make-decoded-time :day (floor days))))))
       (delete-region (line-beginning-position)
                      end)
-      (insert (format-time-string "%Y-%m-%d" new-date))
+      (insert (format-time-string "%Y-%m-%d" new-date t))
       (pulse-momentary-highlight-region (line-beginning-position)
                                         (line-end-position)))))
 
